@@ -7,8 +7,8 @@ html = response.text
 soup = BeautifulSoup(html, 'html.parser')
 list = ["구미","홍천","부여"]
 a = []
-for i in list:
-    link = soup.find("a",string = f"{i}")
+for str in list:
+    link = soup.find("a",string = f"{str}")
     link1 = link.parent
     place = link1.text
     link2 = link1
@@ -25,7 +25,11 @@ for i in list:
 df = pd.DataFrame(a,columns=['place','temparature','humidity'])
 df.to_csv("weather.csv",index=True,encoding='utf8')
 
-
+#지역명 - rows
+#날짜 - columns
+#기온/습도 따로 만들어서 위와 같이 바꾸기
+#날짜로 반복시키기
+#지역명 리스트로 가져와서 반복시키기
 
 
 
