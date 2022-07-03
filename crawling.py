@@ -27,9 +27,9 @@ for i in range(600,800):
             arti = link2.text
             article = arti.replace("\n","").replace(" 저작권자 © 양돈타임스 무단전재 및 재배포 금지김현구다른기사 보기 ","")
 
-    a.append([time, theme ,url, title, article])
+    a.append([time, theme , title, article])
 
-df = pd.DataFrame(a,columns=['time','theme','url','title','article'])
+df = pd.DataFrame(a,columns=['time','theme','title','article'])
 df.to_csv("news.csv",index=False, encoding='utf8')
 
     
